@@ -1,0 +1,25 @@
+From 7eb3a99d29626830459c55d5858af9b03a53a833 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Rapha=C3=ABl=20Zumer?= <rzumer@tebako.net>
+Date: Fri, 22 Nov 2019 16:02:31 -0500
+Subject: [PATCH] Disable LTO in release mode
+
+---
+ Cargo.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Cargo.toml b/Cargo.toml
+index e1784d7..c896922 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -108,7 +108,7 @@ debug = true
+ codegen-units = 1  # if > 1 enables parallel code generation which improves
+                    # compile times, but prevents some optimizations.
+                    # Passes `-C codegen-units`. Ignored when `lto = true`.
+-lto = true
++lto = false
+ 
+ [profile.bench]
+ codegen-units = 1
+-- 
+2.24.0.rc1
+

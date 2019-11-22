@@ -85,6 +85,7 @@ case "${CODEC}" in
     cd ${CODECS_SRC_DIR}/rav1e
     git submodule sync
     git submodule update --init
+    git apply ${APP_DIR}/0001-Disable-LTO-in-release-mode.patch
     cargo build --release
     ;;
 

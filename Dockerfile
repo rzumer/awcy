@@ -208,6 +208,9 @@ RUN \
 # add scripts
 ADD *.m *.sh *.py ${APP_DIR}/
 
+# add patches
+ADD *.patch ${APP_DIR}/
+
 # environment variables
 ENV \
 	CONFIG_DIR=/data/conf \

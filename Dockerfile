@@ -195,8 +195,6 @@ RUN \
 		ssh \
 		time \
 		&& \
-	apt-get clean && \
-	rm -rf /var/lib/apt/lists && \
 	mkdir -p ${RD_TOOL_DIR} && \
 	rm -vf /etc/ssh/ssh_host_* && \
 	curl -sSL https://github.com/rzumer/rd_tool/tarball/master | tar zxf - -C ${RD_TOOL_DIR} --strip-components=1
@@ -212,6 +210,11 @@ RUN \
 	mkdir build && cd build && \
 	meson .. && \
 	ninja
+
+# clear package manager cache
+RUN \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists
 
 # add code
 ADD package.json *.ts tsconfig.json ${APP_DIR}/

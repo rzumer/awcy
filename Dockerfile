@@ -197,7 +197,7 @@ RUN \
 		&& \
 	mkdir -p ${RD_TOOL_DIR} && \
 	rm -vf /etc/ssh/ssh_host_* && \
-	curl -sSL https://github.com/rzumer/rd_tool/tarball/master | tar zxf - -C ${RD_TOOL_DIR} --strip-components=1
+	curl -sSL https://github.com/rzumer/rd_tool/tarball/decode-av1-output | tar zxf - -C ${RD_TOOL_DIR} --strip-components=1
 
 # install dav1d and dependencies
 ENV \
